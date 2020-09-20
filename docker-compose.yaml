@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: url-shortener
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 3000:3000
+      - 9229:9229
+    env_file: .env
